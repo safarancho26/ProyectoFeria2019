@@ -6,7 +6,7 @@
 package particion_paginacion;
 /**
  *
- * @author David Montoya
+ * 
  */
 
 public class Proceso {
@@ -18,7 +18,15 @@ public class Proceso {
         
     public  String nombre ="";
     public  int tamanio=0;
-     
+    public String color=""; 
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
     public String getNombre() {
         return nombre;
     }

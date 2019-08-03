@@ -17,171 +17,229 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import static particion_paginacion.frmProceso.modelo;
 
-
 public class frmMemoria extends javax.swing.JFrame {
 
     public static DefaultListModel modeloLista;
-    public static List<Proceso> listaProcesos= new ArrayList<Proceso>();
-    public static List<Proceso> procesoEspera= new ArrayList<Proceso>();
-    public int memoria=0;
-     
-   public void llenarMemoria( int memoria){
-       
-       switch(memoria){
-           case 0:
-               
-               txtMemoria1.setBackground(Color.white);
-               txtMemoria2.setBackground(Color.white);
-               txtMemoria3.setBackground(Color.white);
-               txtMemoria4.setBackground(Color.white);
-               txtMemoria5.setBackground(Color.white);
-               txtMemoria6.setBackground(Color.white);
-               txtMemoria7.setBackground(Color.white);
-               txtMemoria8.setBackground(Color.white);
-               txtMemoria9.setBackground(Color.white);
-               txtMemoria10.setBackground(Color.white);
-                  
-               break;
-               
-           case 1:
-               txtMemoria1.setBackground(Color.blue);
-               txtMemoria2.setBackground(Color.white);
-               txtMemoria3.setBackground(Color.white);
-               txtMemoria4.setBackground(Color.white);
-               txtMemoria5.setBackground(Color.white);
-               txtMemoria6.setBackground(Color.white);
-               txtMemoria7.setBackground(Color.white);
-               txtMemoria8.setBackground(Color.white);
-               txtMemoria9.setBackground(Color.white);
-               txtMemoria10.setBackground(Color.white);
-              
-               break;
-           case 2:
-               txtMemoria1.setBackground(Color.blue);
-               txtMemoria2.setBackground(Color.blue);
-               txtMemoria3.setBackground(Color.white);
-               txtMemoria4.setBackground(Color.white);
-               txtMemoria5.setBackground(Color.white);
-               txtMemoria6.setBackground(Color.white);
-               txtMemoria7.setBackground(Color.white);
-               txtMemoria8.setBackground(Color.white);
-               txtMemoria9.setBackground(Color.white);
-               txtMemoria10.setBackground(Color.white);
-               
-               break;
-           case 3:
-               txtMemoria1.setBackground(Color.blue);
-               txtMemoria2.setBackground(Color.blue);
-               txtMemoria3.setBackground(Color.blue);
-               txtMemoria4.setBackground(Color.white);
-               txtMemoria5.setBackground(Color.white);
-               txtMemoria6.setBackground(Color.white);
-               txtMemoria7.setBackground(Color.white);
-               txtMemoria8.setBackground(Color.white);
-               txtMemoria9.setBackground(Color.white);
-               txtMemoria10.setBackground(Color.white);
-            
-               break;
-           case 4:
-               txtMemoria1.setBackground(Color.blue);
-               txtMemoria2.setBackground(Color.blue);
-               txtMemoria3.setBackground(Color.blue);
-               txtMemoria4.setBackground(Color.blue);
-               txtMemoria5.setBackground(Color.white);
-               txtMemoria6.setBackground(Color.white);
-               txtMemoria7.setBackground(Color.white);
-               txtMemoria8.setBackground(Color.white);
-               txtMemoria9.setBackground(Color.white);
-               txtMemoria10.setBackground(Color.white);
-               break;
-           case 5:
-               txtMemoria1.setBackground(Color.blue);
-               txtMemoria2.setBackground(Color.blue);
-               txtMemoria3.setBackground(Color.blue);
-               txtMemoria4.setBackground(Color.blue);
-               txtMemoria5.setBackground(Color.blue);
-               txtMemoria6.setBackground(Color.white);
-               txtMemoria7.setBackground(Color.white);
-               txtMemoria8.setBackground(Color.white);
-               txtMemoria9.setBackground(Color.white);
-               txtMemoria10.setBackground(Color.white);
-               break;
-           case 6:
-               txtMemoria1.setBackground(Color.blue);
-               txtMemoria2.setBackground(Color.blue);
-               txtMemoria3.setBackground(Color.blue);
-               txtMemoria4.setBackground(Color.blue);
-               txtMemoria5.setBackground(Color.blue);
-               txtMemoria6.setBackground(Color.blue);
-               txtMemoria7.setBackground(Color.white);
-               txtMemoria8.setBackground(Color.white);
-               txtMemoria9.setBackground(Color.white);
-               txtMemoria10.setBackground(Color.white);
-               break;
-           case 7:
-               txtMemoria1.setBackground(Color.blue);
-               txtMemoria2.setBackground(Color.blue);
-               txtMemoria3.setBackground(Color.blue);
-               txtMemoria4.setBackground(Color.blue);
-               txtMemoria5.setBackground(Color.blue);
-               txtMemoria6.setBackground(Color.blue);
-               txtMemoria7.setBackground(Color.blue);
-               txtMemoria8.setBackground(Color.white);
-               txtMemoria9.setBackground(Color.white);
-               txtMemoria10.setBackground(Color.white);
-               break;
-           case 8:
-               txtMemoria1.setBackground(Color.blue);
-               txtMemoria2.setBackground(Color.blue);
-               txtMemoria3.setBackground(Color.blue);
-               txtMemoria4.setBackground(Color.blue);
-               txtMemoria5.setBackground(Color.blue);
-               txtMemoria6.setBackground(Color.blue);
-               txtMemoria7.setBackground(Color.blue);
-               txtMemoria8.setBackground(Color.blue);
-               txtMemoria9.setBackground(Color.white);
-               txtMemoria10.setBackground(Color.white);
-               break;
-           case 9:
-               txtMemoria1.setBackground(Color.blue);
-               txtMemoria2.setBackground(Color.blue);
-               txtMemoria3.setBackground(Color.blue);
-               txtMemoria4.setBackground(Color.blue);
-               txtMemoria5.setBackground(Color.blue);
-               txtMemoria6.setBackground(Color.blue);
-               txtMemoria7.setBackground(Color.blue);
-               txtMemoria8.setBackground(Color.blue);
-               txtMemoria9.setBackground(Color.blue);
-               txtMemoria10.setBackground(Color.white);
-               break;
-           case 10:
-               txtMemoria1.setBackground(Color.blue);
-               txtMemoria2.setBackground(Color.blue);
-               txtMemoria3.setBackground(Color.blue);
-               txtMemoria4.setBackground(Color.blue);
-               txtMemoria5.setBackground(Color.blue);
-               txtMemoria6.setBackground(Color.blue);
-               txtMemoria7.setBackground(Color.blue);
-               txtMemoria8.setBackground(Color.blue);
-               txtMemoria9.setBackground(Color.blue);
-               txtMemoria10.setBackground(Color.blue);
-               break;       
-       }   
-   }    
-  
-   public frmMemoria() {
+    public static List<Proceso> listaProcesos = new ArrayList<Proceso>();
+    public static List<Proceso> procesoEspera = new ArrayList<Proceso>();
+    public static ArrayList Espacio = new ArrayList();
+    public int memoria = 0;
+    Proceso P = new Proceso();
+
+    Proceso[] memoriaArray = new Proceso[10];
+
+    public int getIndiceIngresar(int tamanio) {
+        for (int i = 0; i < memoriaArray.length; i++) {
+            if (memoriaArray[i] == null) {
+                int contadorEspacios = 1;
+                for (int j = (i + 1); j < (i + tamanio); j++) {
+                    if (memoriaArray[j] == null) {
+                        contadorEspacios++;
+                    }
+                }
+
+                if (contadorEspacios == tamanio) {
+                    return i;
+                }
+            }
+        }
+
+        return -1;
+    }
+
+    public void llenarMemoriaArreglo() {
+        pintar(txtMemoria1, memoriaArray[0]);
+        pintar(txtMemoria2, memoriaArray[1]);
+        pintar(txtMemoria3, memoriaArray[2]);
+        pintar(txtMemoria4, memoriaArray[3]);
+        pintar(txtMemoria5, memoriaArray[4]);
+        pintar(txtMemoria6, memoriaArray[5]);
+        pintar(txtMemoria7, memoriaArray[6]);
+        pintar(txtMemoria8, memoriaArray[7]);
+        pintar(txtMemoria9, memoriaArray[8]);
+        pintar(txtMemoria10, memoriaArray[9]);
+
+    }
+
+    public void pintar(JTextField txt, Proceso p) {
+        try {
+            String colorNOmbre = "white";
+            if (p != null) {
+                colorNOmbre = p.getColor();
+            }
+            txt.setBackground(Color.getColor(colorNOmbre));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void agregarProcesoNuevo(Proceso p) {
+        int indice = getIndiceIngresar(p.getTamanio());
+
+        for (int i = indice; i < (indice + p.getTamanio()); i++) {
+            memoriaArray[i] = p;
+        }
+    }
+
+    public void llenarMemoria(int memoria) {
+
+        switch (memoria) {
+            case 0:
+
+                txtMemoria1.setBackground(Color.WHITE);
+                txtMemoria2.setBackground(Color.white);
+                txtMemoria3.setBackground(Color.white);
+                txtMemoria4.setBackground(Color.white);
+                txtMemoria5.setBackground(Color.white);
+                txtMemoria6.setBackground(Color.white);
+                txtMemoria7.setBackground(Color.white);
+                txtMemoria8.setBackground(Color.white);
+                txtMemoria9.setBackground(Color.white);
+                txtMemoria10.setBackground(Color.white);
+
+                break;
+
+            case 1:
+                txtMemoria1.setBackground(Color.getColor(P.getColor()));
+                txtMemoria2.setBackground(Color.white);
+                txtMemoria3.setBackground(Color.white);
+                txtMemoria4.setBackground(Color.white);
+                txtMemoria5.setBackground(Color.white);
+                txtMemoria6.setBackground(Color.white);
+                txtMemoria7.setBackground(Color.white);
+                txtMemoria8.setBackground(Color.white);
+                txtMemoria9.setBackground(Color.white);
+                txtMemoria10.setBackground(Color.white);
+
+                break;
+            case 2:
+                txtMemoria1.setBackground(Color.getColor(P.color));
+                txtMemoria2.setBackground(Color.getColor(P.color));
+                txtMemoria3.setBackground(Color.white);
+                txtMemoria4.setBackground(Color.white);
+                txtMemoria5.setBackground(Color.white);
+                txtMemoria6.setBackground(Color.white);
+                txtMemoria7.setBackground(Color.white);
+                txtMemoria8.setBackground(Color.white);
+                txtMemoria9.setBackground(Color.white);
+                txtMemoria10.setBackground(Color.white);
+
+                break;
+            case 3:
+                txtMemoria1.setBackground(Color.getColor(P.color));
+                txtMemoria2.setBackground(Color.getColor(P.color));
+                txtMemoria3.setBackground(Color.getColor(P.color));
+                txtMemoria4.setBackground(Color.white);
+                txtMemoria5.setBackground(Color.white);
+                txtMemoria6.setBackground(Color.white);
+                txtMemoria7.setBackground(Color.white);
+                txtMemoria8.setBackground(Color.white);
+                txtMemoria9.setBackground(Color.white);
+                txtMemoria10.setBackground(Color.white);
+
+                break;
+            case 4:
+                txtMemoria1.setBackground(Color.getColor(P.color));
+                txtMemoria2.setBackground(Color.getColor(P.color));
+                txtMemoria3.setBackground(Color.getColor(P.color));
+                txtMemoria4.setBackground(Color.getColor(P.color));
+                txtMemoria5.setBackground(Color.white);
+                txtMemoria6.setBackground(Color.white);
+                txtMemoria7.setBackground(Color.white);
+                txtMemoria8.setBackground(Color.white);
+                txtMemoria9.setBackground(Color.white);
+                txtMemoria10.setBackground(Color.white);
+                break;
+            case 5:
+                txtMemoria1.setBackground(Color.getColor(P.color));
+                txtMemoria2.setBackground(Color.getColor(P.color));
+                txtMemoria3.setBackground(Color.getColor(P.color));
+                txtMemoria4.setBackground(Color.getColor(P.color));
+                txtMemoria5.setBackground(Color.getColor(P.color));
+                txtMemoria6.setBackground(Color.white);
+                txtMemoria7.setBackground(Color.white);
+                txtMemoria8.setBackground(Color.white);
+                txtMemoria9.setBackground(Color.white);
+                txtMemoria10.setBackground(Color.white);
+                break;
+            case 6:
+                txtMemoria1.setBackground(Color.getColor(P.color));
+                txtMemoria2.setBackground(Color.getColor(P.color));
+                txtMemoria3.setBackground(Color.getColor(P.color));
+                txtMemoria4.setBackground(Color.getColor(P.color));
+                txtMemoria5.setBackground(Color.getColor(P.color));
+                txtMemoria6.setBackground(Color.getColor(P.color));
+                txtMemoria7.setBackground(Color.white);
+                txtMemoria8.setBackground(Color.white);
+                txtMemoria9.setBackground(Color.white);
+                txtMemoria10.setBackground(Color.white);
+                break;
+            case 7:
+                txtMemoria1.setBackground(Color.getColor(P.color));
+                txtMemoria2.setBackground(Color.getColor(P.color));
+                txtMemoria3.setBackground(Color.getColor(P.color));
+                txtMemoria4.setBackground(Color.getColor(P.color));
+                txtMemoria5.setBackground(Color.getColor(P.color));
+                txtMemoria6.setBackground(Color.getColor(P.color));
+                txtMemoria7.setBackground(Color.getColor(P.color));
+                txtMemoria8.setBackground(Color.white);
+                txtMemoria9.setBackground(Color.white);
+                txtMemoria10.setBackground(Color.white);
+                break;
+            case 8:
+                txtMemoria1.setBackground(Color.getColor(P.color));
+                txtMemoria2.setBackground(Color.getColor(P.color));
+                txtMemoria3.setBackground(Color.getColor(P.color));
+                txtMemoria4.setBackground(Color.getColor(P.color));
+                txtMemoria5.setBackground(Color.getColor(P.color));
+                txtMemoria6.setBackground(Color.getColor(P.color));
+                txtMemoria7.setBackground(Color.getColor(P.color));
+                txtMemoria8.setBackground(Color.getColor(P.color));
+                txtMemoria9.setBackground(Color.white);
+                txtMemoria10.setBackground(Color.white);
+                break;
+            case 9:
+                txtMemoria1.setBackground(Color.blue);
+                txtMemoria2.setBackground(Color.blue);
+                txtMemoria3.setBackground(Color.blue);
+                txtMemoria4.setBackground(Color.blue);
+                txtMemoria5.setBackground(Color.blue);
+                txtMemoria6.setBackground(Color.blue);
+                txtMemoria7.setBackground(Color.blue);
+                txtMemoria8.setBackground(Color.blue);
+                txtMemoria9.setBackground(Color.blue);
+                txtMemoria10.setBackground(Color.white);
+                break;
+            case 10:
+                txtMemoria1.setBackground(Color.getColor(P.getColor()));
+                txtMemoria2.setBackground(Color.getColor(P.color));
+                txtMemoria3.setBackground(Color.getColor(P.color));
+                txtMemoria4.setBackground(Color.getColor(P.color));
+                txtMemoria5.setBackground(Color.getColor(P.color));
+                txtMemoria6.setBackground(Color.getColor(P.color));
+                txtMemoria7.setBackground(Color.getColor(P.color));
+                txtMemoria8.setBackground(Color.getColor(P.color));
+                txtMemoria9.setBackground(Color.getColor(P.color));
+                txtMemoria10.setBackground(Color.getColor(P.color));
+                break;
+        }
+    }
+
+    public frmMemoria() {
         initComponents();
         setTitle("Sistemas Operativos - Paginacion Simple");
         setLocationRelativeTo(null);
-        Image icon= Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Imagen/icono2.png"));
+        Image icon = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Imagen/icono2.png"));
         this.setIconImage(icon);
-         ImageIcon imagenFondo= new ImageIcon(getClass().getResource("/imagen/fondoimg2.jpg"));
+        ImageIcon imagenFondo = new ImageIcon(getClass().getResource("/imagen/fondoimg2.jpg"));
         Icon fondo = new ImageIcon(imagenFondo.getImage().getScaledInstance(lblFondo2.getWidth(), lblFondo2.getHeight(), Image.SCALE_DEFAULT));
         lblFondo2.setIcon(fondo);
         this.repaint();
         modeloLista = new DefaultListModel();
-        lstEjecucion.setModel(modeloLista);   
+        lstEjecucion.setModel(modeloLista);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -217,7 +275,7 @@ public class frmMemoria extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        lstEjecucion = new javax.swing.JList<>();
+        lstEjecucion = new javax.swing.JList<String>();
         jPanel3 = new javax.swing.JPanel();
         btnFinalizar = new javax.swing.JButton();
         btnIngresar = new javax.swing.JButton();
@@ -236,16 +294,16 @@ public class frmMemoria extends javax.swing.JFrame {
         lblGMemoria.setText("Gestion de memoria");
         getContentPane().add(lblGMemoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(369, 18, -1, -1));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), "Paginacion Simple", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), "Paginacion Simple", 0, 0, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.setOpaque(false);
 
-        txtMemoria1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtMemoria1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         txtMemoria2.setText("               ");
-        txtMemoria2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtMemoria2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         txtMemoria3.setText("    ");
-        txtMemoria3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtMemoria3.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
         txtMemoria3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMemoria3ActionPerformed(evt);
@@ -253,25 +311,25 @@ public class frmMemoria extends javax.swing.JFrame {
         });
 
         txtMemoria4.setText("     ");
-        txtMemoria4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtMemoria4.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         txtMemoria5.setText("   ");
-        txtMemoria5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtMemoria5.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         txtMemoria6.setText("   ");
-        txtMemoria6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtMemoria6.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         txtMemoria7.setText("   ");
-        txtMemoria7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtMemoria7.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         txtMemoria8.setText("   ");
-        txtMemoria8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtMemoria8.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         txtMemoria10.setText("   ");
-        txtMemoria10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtMemoria10.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         txtMemoria9.setText("   ");
-        txtMemoria9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtMemoria9.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("  1");
@@ -398,13 +456,12 @@ public class frmMemoria extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 140, 330));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 204)), "Consola", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 204)), "Consola", 0, 0, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel2.setOpaque(false);
 
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Procesos en Ejecucion y en Espera");
 
-        lstEjecucion.setBackground(new java.awt.Color(255, 255, 255));
         lstEjecucion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lstEjecucion.setForeground(new java.awt.Color(0, 0, 102));
         jScrollPane5.setViewportView(lstEjecucion);
@@ -490,7 +547,6 @@ public class frmMemoria extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, -1));
 
-        tblDatos2.setBackground(new java.awt.Color(255, 255, 255));
         tblDatos2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         tblDatos2.setForeground(new java.awt.Color(0, 0, 102));
         tblDatos2.setModel(new javax.swing.table.DefaultTableModel(
@@ -540,19 +596,17 @@ public class frmMemoria extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMemoria3ActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        int respuesta=JOptionPane.showConfirmDialog(this
-            , "¿Esta seguro de regresar, para crear nuevos procesos ?",
-            "Ingrese nuevos Procesos"
-        ,JOptionPane.YES_NO_OPTION);
+        int respuesta = JOptionPane.showConfirmDialog(this, "¿Esta seguro de regresar, para crear nuevos procesos ?",
+                "Ingrese nuevos Procesos", JOptionPane.YES_NO_OPTION);
 
-        if (respuesta==JOptionPane.YES_OPTION) {
+        if (respuesta == JOptionPane.YES_OPTION) {
             listaProcesos.clear();
             procesoEspera.clear();
             frmProceso ventana1 = new frmProceso();
-        ventana1.setVisible(true);
-        this.setVisible(false);
-        
-        }     
+            ventana1.setVisible(true);
+            this.setVisible(false);
+
+        }
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
@@ -562,109 +616,115 @@ public class frmMemoria extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         int filaSelect = tblDatos2.getSelectedRow();
-        
-        if(filaSelect >= 0){
-            
-            Proceso proceso = new Proceso(); 
-            String nombre = (String)modelo.getValueAt(tblDatos2.getSelectedRow(), 0);
-            int tamanio=Integer.parseInt((String)modelo.getValueAt(tblDatos2.getSelectedRow(), 1));
+
+        if (filaSelect >= 0) {
+
+            Proceso proceso = new Proceso();
+            String nombre = (String) modelo.getValueAt(tblDatos2.getSelectedRow(), 0);
+            int tamanio = Integer.parseInt((String) modelo.getValueAt(tblDatos2.getSelectedRow(), 1));
+            String Color = (String) modelo.getValueAt(tblDatos2.getSelectedRow(), 2);
             proceso.setNombre(nombre);
             proceso.setTamanio(tamanio);
-        
-            if ((proceso.getTamanio()+memoria) <= 10){
-                 memoria+= proceso.tamanio;
-                 modeloLista.addElement("En Ejecucion (Proceso: "+proceso.getNombre()+" Tamaño: "+proceso.getTamanio()+")");
-                proceso.getNombre();
-                proceso.getTamanio();
-                 listaProcesos.add(proceso);
-                llenarMemoria(memoria);
-                
-            }else if((proceso.getTamanio()+memoria) > 10){
-                JOptionPane.showMessageDialog(null, "Excede espacio de Memoria");
-                JOptionPane.showMessageDialog(null, "En Espera (Proceso: "+proceso.getNombre()+")");                
-                 modeloLista.addElement("En Espera (Proceso: "+proceso.getNombre()+" Tamaño: "+proceso.getTamanio()+")"+"Memoria: "+ memoria);
-                 proceso.getNombre();
-                 proceso.getTamanio();
-                 listaProcesos.add(proceso);
-                procesoEspera.add(proceso);
-               
-                
-                for (Proceso e : procesoEspera) {
-                    System.out.println("nombre: "+e.nombre);
-                    System.out.println("tamaño: "+e.tamanio);
-                    
-                 }
-            }
-            else{
-            JOptionPane.showMessageDialog(null, "Proceso no Seleccionada");
-        }
+            proceso.setColor(Color);
+
+            agregarProcesoNuevo(proceso);
+
+            llenarMemoriaArreglo();
+
+            /*if ((proceso.getTamanio() + memoria) <= 10) {
+             memoria += proceso.tamanio;
+             modeloLista.addElement("En Ejecucion (Proceso: " + proceso.getNombre() + " Tamaño: " + proceso.getTamanio() + ")");
+             proceso.getNombre();
+             proceso.getTamanio();
+             proceso.getColor();
+             listaProcesos.add(proceso);
+             llenarMemoria(memoria);
+
+             } else if ((proceso.getTamanio() + memoria) > 10) {
+             JOptionPane.showMessageDialog(null, "Excede espacio de Memoria");
+             JOptionPane.showMessageDialog(null, "En Espera (Proceso: " + proceso.getNombre() + ")");
+             modeloLista.addElement("En Espera (Proceso: " + proceso.getNombre() + " Tamaño: " + proceso.getTamanio() + ")" + "Memoria: " + memoria);
+             proceso.getNombre();
+             proceso.getTamanio();
+
+             procesoEspera.add(proceso);
+
+             for (Proceso e : procesoEspera) {
+             System.out.println("nombre: " + e.nombre);
+             System.out.println("tamaño: " + e.tamanio);
+
+             }
+             } else {
+             JOptionPane.showMessageDialog(null, "Proceso no Seleccionada");
+             }*/
     }//GEN-LAST:event_btnIngresarActionPerformed
     }
     private void btnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarActionPerformed
         int filaSelect = tblDatos2.getSelectedRow();
-         
-        if(filaSelect >= 0){
-            
-            System.out.println("fila seleccionada: "+filaSelect);
-             
-            String nombre= listaProcesos.get(filaSelect).getNombre();
-             int tamanio=listaProcesos.get(filaSelect).getTamanio();
-             System.out.println("nombre: "+nombre);
-             System.out.println("Tamaño: "+tamanio);
-             
-              memoria-=tamanio;
-              llenarMemoria(memoria);
-            JOptionPane.showMessageDialog(null, "Se Finalizo (Proceso: "+nombre+")");
-            modeloLista.addElement("Se finalizo (Proceso: "+nombre+ " Tamaño: "+ tamanio+")");
-           
-           
-        }else{
+
+        if (filaSelect >= 0) {
+
+            System.out.println("fila seleccionada: " + filaSelect);
+
+            String nombre = listaProcesos.get(filaSelect).getNombre();
+            int tamanio = listaProcesos.get(filaSelect).getTamanio();
+            System.out.println("nombre: " + nombre);
+            System.out.println("Tamaño: " + tamanio);
+
+            memoria -= tamanio;
+            llenarMemoria(memoria);
+            JOptionPane.showMessageDialog(null, "Se Finalizo (Proceso: " + nombre + ")");
+            modeloLista.addElement("Se finalizo (Proceso: " + nombre + " Tamaño: " + tamanio + ")");
+
+        } else {
             JOptionPane.showMessageDialog(null, "Proceso no Seleccionada");
-        }     
-        if(!procesoEspera.isEmpty()){
-             
-                String nombreE= procesoEspera.get(0).getNombre();
-                 int tamanioE = procesoEspera.get(0).getTamanio();
-                
-                if ((memoria+tamanioE)<=10){
-                memoria+=tamanioE;
+        }
+        if (!procesoEspera.isEmpty()) {
+
+            String nombreE = procesoEspera.get(0).getNombre();
+            int tamanioE = procesoEspera.get(0).getTamanio();
+
+            if ((memoria + tamanioE) <= 10) {
+                memoria += tamanioE;
                 llenarMemoria(memoria);
-                JOptionPane.showMessageDialog(null, "Se ejecuto Proceso en Espera : "+nombreE);
-               
-                modeloLista.addElement("Se ejecuto (Proceso en Espera : "+nombreE+" Tamaño: "+tamanioE+")");
+                JOptionPane.showMessageDialog(null, "Se ejecuto Proceso en Espera : " + nombreE);
+                Espacio.add(memoria);
+                System.out.println("particion" + Espacio.get(memoria));
+
+                modeloLista.addElement("Se ejecuto (Proceso en Espera : " + nombreE + " Tamaño: " + tamanioE + ")");
                 procesoEspera.remove(0);
-                }else if((memoria+tamanioE) >10) {
-                    JOptionPane.showMessageDialog(null,"Sigue en espera (Proceso: "+nombreE );
-                modeloLista.addElement( "Sigue en espera (Proceso: "+nombreE+" Tamaño: "+tamanioE+")");
-                }
-          
-            
-        } if(!procesoEspera.isEmpty()){
-                int i= procesoEspera.size()-1;
-                 String nombreE1= procesoEspera.get(i).getNombre();
-                 int tamanioE1 = procesoEspera.get(i).getTamanio();
-                
-                if ((memoria+tamanioE1)<=10){
-                memoria+=tamanioE1;
-                llenarMemoria(memoria);
-                JOptionPane.showMessageDialog(null, "Se ejecuto Proceso en Espera : "+nombreE1);
-               
-                modeloLista.addElement("Se ejecuto (Proceso en Espera : "+nombreE1+" Tamaño: "+tamanioE1+")");
-                procesoEspera.remove(i);
-                }else if((memoria+tamanioE1) >10) {
-                    JOptionPane.showMessageDialog(null,"Sigue en espera (Proceso: "+nombreE1 );
-                modeloLista.addElement( "Sigue en espera (Proceso: "+nombreE1+" Tamaño: "+tamanioE1+")");
-                }
+            } else if ((memoria + tamanioE) > 10) {
+                JOptionPane.showMessageDialog(null, "Sigue en espera (Proceso: " + nombreE);
+                modeloLista.addElement("Sigue en espera (Proceso: " + nombreE + " Tamaño: " + tamanioE + ")");
             }
-        
-                                
+
+        }
+        if (!procesoEspera.isEmpty()) {
+            int i = procesoEspera.size() - 1;
+            String nombreE1 = procesoEspera.get(i).getNombre();
+            int tamanioE1 = procesoEspera.get(i).getTamanio();
+
+            if ((memoria + tamanioE1) <= 10) {
+                memoria += tamanioE1;
+                llenarMemoria(memoria);
+                JOptionPane.showMessageDialog(null, "Se ejecuto Proceso en Espera : " + nombreE1);
+                Espacio.add(memoria);
+                modeloLista.addElement("Se ejecuto (Proceso en Espera : " + nombreE1 + " Tamaño: " + tamanioE1 + ")");
+                procesoEspera.remove(i);
+            } else if ((memoria + tamanioE1) > 10) {
+                JOptionPane.showMessageDialog(null, "Sigue en espera (Proceso: " + nombreE1);
+                modeloLista.addElement("Sigue en espera (Proceso: " + nombreE1 + " Tamaño: " + tamanioE1 + ")");
+            }
+        }
+
+
     }//GEN-LAST:event_btnFinalizarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
-           
+
     /**
      * @param args the command line arguments
      */
